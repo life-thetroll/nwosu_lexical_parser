@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cctype>
-using namespace std; 
+using namespace std;
 
 /* Global declarations */
 /* Variables */
@@ -45,7 +45,7 @@ int main() {
             if (nextChar == ' ') continue; // Skip whitespace
             lex(); // Call lexical analyzer
         }
-        std::cout << "\nEnter more code, then hit 'Enter':\n";
+        cout << "\nEnter more code, then hit 'Enter':\n";
     }
     return 0;
 }
@@ -91,13 +91,13 @@ void addChar() {
         lexeme[lexLen++] = nextChar;
         lexeme[lexLen] = 0;
     } else
-        std::cout << "Error - lexeme is too long" << std::endl;
+        cout << "Error - lexeme is too long" << endl;
 }
 
 void getChar() {
-    std::cin.get(nextChar);
+    cin.get(nextChar);
     if (nextChar != '\n')
-        std::cin.ignore(256, '\n'); // Ignore extra characters in the input buffer
+        cin.ignore(256, '\n'); // Ignore extra characters in the input buffer
     if (nextChar != EOF) {
         if (isalpha(nextChar))
             charClass = LETTER;
@@ -149,7 +149,6 @@ int lex() {
             break;
     }
 
-    std::cout << "Next token is: " << nextToken << ", Next lexeme is " << lexeme << std::endl;
+    cout << "Next token is: " << nextToken << ", Next lexeme is " << lexeme << endl;
     return nextToken;
 }
-
