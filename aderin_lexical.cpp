@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cctype>
+using namespace std; 
 
 /* Global declarations */
 /* Variables */
@@ -31,10 +32,11 @@ int lex();
 #define RIGHT_PAREN 26
 
 int main() {
-    std::cout << "Enter your code: (type 'exit' to quit)\n";
-    std::string input;
+    string input;
+    cout << "Enter your code, then hit 'Enter'\n";
+ 
     while (true) {
-        getline(std::cin, input);
+        getline(cin, input);
         if (input == "exit") {
             break;
         }
@@ -43,7 +45,7 @@ int main() {
             if (nextChar == ' ') continue; // Skip whitespace
             lex(); // Call lexical analyzer
         }
-        std::cout << "\nEnter more code or type 'exit' to quit:\n";
+        std::cout << "\nEnter more code, then hit 'Enter':\n";
     }
     return 0;
 }
