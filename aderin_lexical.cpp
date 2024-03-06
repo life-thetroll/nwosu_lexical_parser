@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 #include <cctype>
 using namespace std;
 
@@ -40,11 +41,13 @@ int main() {
         if (input == "exit") {
             break;
         }
-        for (char c : input) {
+        for (int i = 0; i < input.length(); ++i) {
+            char c = input[i];
             nextChar = c;
             if (nextChar == ' ') continue; // Skip whitespace
             lex(); // Call lexical analyzer
         }
+
         cout << "\nEnter more code, then hit 'Enter':\n";
     }
     return 0;
