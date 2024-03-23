@@ -6,7 +6,7 @@ using namespace std;
 
 /* Global declarations */
 /* Variables */
-
+ifstream inFile; // Declare the file stream globally
 int charClass;
 char lexeme[100];
 char nextChar;
@@ -35,7 +35,6 @@ int lookup(char ch); // Update function declaration
 #define RIGHT_PAREN 26
 
 int main() {
-    ifstream inFile;
     string filename;
     
     cout << "Enter the name of the input file: ";
@@ -59,7 +58,7 @@ int main() {
         }
     }
 
-    inFile.close();
+    inFile.close(); // Close the file
     return 0;
 }
 
