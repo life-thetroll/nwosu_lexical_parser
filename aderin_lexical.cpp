@@ -83,7 +83,7 @@ int lookup(char ch) {
             break;
         default:
             addChar();
-            nextToken = MULT_OP;
+            nextToken = INT_LIT;
             break;
     }
     return nextToken;
